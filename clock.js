@@ -81,7 +81,7 @@ function getNextTrainTime(a, getCurrentTime) {
         }
     }
     if (minSub == null) {
-        document.getElementById("train-time").style.fontSize = "medium";
+        document.getElementById("train-time").style.fontSize = "small";
         return "本日の電車は終了しました。";
     } else {
         return minSubString;

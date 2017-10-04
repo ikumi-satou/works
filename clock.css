@@ -12,7 +12,7 @@ span {
 #left-side {
     float: left;
     padding: 0.7em;
-    width: 60%;
+    width: 50%;
     text-align: center;
 }
 
@@ -21,13 +21,13 @@ span {
 }
 
 #time {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 #right-side {
     float: right;
     padding: 3em;
-    width: 40%;
+    width: 50%;
     text-align: center;
 }
 
