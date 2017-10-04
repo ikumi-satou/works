@@ -1,0 +1,56 @@
+body {
+    background-color: black !important;
+    color: white !important;
+    font-family: sans-serif;
+    width: 100%
+}
+
+span {
+    display: block;
+}
+
+#left-side {
+    float: left;
+    padding: 0.7em;
+    width: 60%;
+    text-align: center;
+}
+
+#date {
+    font-size: 0.3em;
+}
+
+#time {
+    font-size: 1em;
+}
+
+#right-side {
+    float: right;
+    padding: 50px 100px;
+    width: 40%;
+    text-align: center;
+}
+
+.trash {
+    padding-bottom: 10px;
+}
+
+#trash-contents {
+    font-size: 0.9em;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid white;
+}
+
+.train {
+    padding-top: 10px;
+}
+
+.train-txt {
+    letter-spacing: 5px;
+}
+
+#train-time {
+    font-size: 35px;
+    padding-top: 1em;
+}
