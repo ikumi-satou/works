@@ -17,7 +17,7 @@ function clock() {
 
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = h + ":" + mi + ":" + s;
-    document.getElementById("left-side").style.fontSize = window.innerWidth / 10 + "px";
+    document.getElementById("left-side").style.fontSize = window.innerWidth / 9 + "px";
     document.getElementById("right-side").style.fontSize = window.innerWidth / 45 + "px";
 }
 
