@@ -26,7 +26,7 @@ span {
 
 #right-side {
     float: right;
-    padding: 50px 100px;
+    padding: 3em;
     width: 40%;
     text-align: center;
 }
@@ -36,14 +36,14 @@ span {
 }
 
 #trash-contents {
-    font-size: 0.9em;
+    font-size: 0.5em;
     padding-top: 15px;
     padding-bottom: 25px;
     border-bottom: 1px solid white;
 }
 
 .train {
-    padding-top: 10px;
+    padding-top: 0.5em;
 }
 
 .train-txt {
@@ -51,6 +51,6 @@ span {
 }
 
 #train-time {
-    font-size: 35px;
+    font-size: 0.5em;
     padding-top: 1em;
 }

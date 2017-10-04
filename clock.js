@@ -18,6 +18,7 @@ function clock() {
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = h + ":" + mi + ":" + s;
     document.getElementById("left-side").style.fontSize = window.innerWidth / 10 + "px";
+    document.getElementById("right-side").style.fontSize = window.innerWidth / 45 + "px";
 }
 
 setInterval(clock, 1000);
@@ -42,8 +43,6 @@ function trash() {
         document.getElementById("trash-contents").innerHTML = "　";
         break;
     }
-    document.getElementById("right-side").style.fontSize = window.innerWidth / 50 + "px";
-
 }
 
 trash();
