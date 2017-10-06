@@ -1,5 +1,5 @@
 var daySchedule = [ // 平日
-    "9:22", "9:32", "9:42"
+    "9:22", "9:32", "9:42", "12:00"
 ];
 var holSchedule = [ // 土日
     "9:15", "9:25", "9:35", "11:30"
@@ -25,7 +25,7 @@ function clock() {
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = h + ":" + mi + ":" + s;
     document.getElementById("left-side").style.fontSize = window.innerWidth / 9 + "px";
-    document.getElementById("right-side").style.fontSize = window.innerWidth / 40 + "px";
+    document.getElementById("right-side").style.fontSize = window.innerWidth / 35 + "px";
 }
 
 setInterval(clock, 1000);
@@ -91,6 +91,7 @@ function getNextTrainTime(a, getCurrentTime) {
         document.getElementById("train-time").style.fontSize = "small";
         return "本日の電車は終了しました。";
     } else {
+        document.getElementById("train-time").style.fontSize = "medium";
         return minSubString;
     }
 }
