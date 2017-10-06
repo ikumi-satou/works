@@ -1,3 +1,10 @@
+var daySchedule = [ // 平日
+    "9:22", "9:32", "9:42"
+];
+var holSchedule = [ // 土日
+    "9:15", "9:25", "9:35", "11:30"
+];
+
 var weeks = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
 
 function clock() {
@@ -18,7 +25,7 @@ function clock() {
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = h + ":" + mi + ":" + s;
     document.getElementById("left-side").style.fontSize = window.innerWidth / 9 + "px";
-    document.getElementById("right-side").style.fontSize = window.innerWidth / 45 + "px";
+    document.getElementById("right-side").style.fontSize = window.innerWidth / 40 + "px";
 }
 
 setInterval(clock, 1000);
@@ -31,17 +38,17 @@ function trash() {
     switch (w) {
         case 1:
         case 4:
-        document.getElementById("trash-contents").innerHTML = contents[0];
-        break;
+            document.getElementById("trash-contents").innerHTML = contents[0];
+            break;
         case 2:
-        document.getElementById("trash-contents").innerHTML = contents[1];
-        break;
+            document.getElementById("trash-contents").innerHTML = contents[1];
+            break;
         case 5:
-        document.getElementById("trash-contents").innerHTML = contents[2];
-        break;
+            document.getElementById("trash-contents").innerHTML = contents[2];
+            break;
         default:
-        document.getElementById("trash-contents").innerHTML = "　";
-        break;
+            document.getElementById("trash-contents").innerHTML = "　";
+            break;
     }
 }
 
@@ -75,12 +82,12 @@ function getNextTrainTime(a, getCurrentTime) {
         if (nextSub < 0) {
             continue;
         }
-        if (minSub == null || nextSub < minSub) {
+        if (minSub === null || nextSub < minSub) {
             minSub = nextSub;
             minSubString = a[z]; // 元文字列は、aに持っているね。　そして、subの順序とaの順序は一緒ですから、sub[i]に該当している要素は、a[i]にあるはず
         }
     }
-    if (minSub == null) {
+    if (minSub === null) {
         document.getElementById("train-time").style.fontSize = "small";
         return "本日の電車は終了しました。";
     } else {
@@ -88,5 +95,66 @@ function getNextTrainTime(a, getCurrentTime) {
     }
 }
 
-var schedule = ["9:32", "9:42", "9:52"];
-document.getElementById("train-time").innerHTML = getNextTrainTime(schedule, getCurrentTime());
+// 時刻表の平日・土日の切り替え
+var now = new Date;
+var w = now.getDay();
+switch (w) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        document.getElementById("train-time").innerHTML = getNextTrainTime(daySchedule, getCurrentTime());
+        break;
+    case 0:
+    case 6:
+        document.getElementById("train-time").innerHTML = getNextTrainTime(holSchedule, getCurrentTime());
+        break;
+}
+
+var holiday = [
+    [1, 1], [1, 2], [1, 3],
+    [2, 11],
+    [4, 29],
+    [5, 3], [5, 4], [5, 5],
+    [8, 11],
+    [11, 3], [11, 23],
+    [12, 23], [12, 30], [12, 31]
+];
+var mo = now.getMonth() + 1;
+var d = now.getDate();
+
+for (var i = 0; i < holiday.length; i++) {
+    if (mo === holiday[i][0] && d === holiday[i][1]) {
+        document.getElementById("train-time").innerHTML = getNextTrainTime(holSchedule, getCurrentTime());
+    }
+}
+
+function getWeekOfDay(year, month, week, day) {
+
+    // 指定した年月の最初の曜日を取得
+    var date = new Date(year + "/" + month + "/ 1");
+    var firstDay = date.getDay();
+
+    // 求めたい曜日の第1週の日付けを計算
+    var date2 = day - firstDay + 1;
+    if(date2 <= 0) {
+        day += 7;
+    }
+
+    // n週まで1週間を足す
+    date2 += 7 * (week - 1);
+    return date2;
+}
+
+var holiday2 = [
+    [2017, 1, 2, 1], [2017, 7, 3, 1], [2017, 9, 3, 1], [2017, 10, 2, 1]
+];
+
+for(var j = 0; j < holiday2.length; j++) {
+    var day = getWeekOfDay(holiday2[j][0], holiday2[j][1], holiday2[j][2], holiday2[j][3]);
+    if(mo === holiday2[j][1] && d === day) {
+        document.getElementById("train-time").innerHTML = getNextTrainTime(holSchedule, getCurrentTime());
+        break;
+    }
+}
