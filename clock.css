@@ -26,19 +26,23 @@ span {
 
 #right-side {
     float: right;
-    padding: 3em;
-    width: 50%;
+    padding: 2.5em;
+    width: 40%;
     text-align: center;
 }
 
 .trash {
     padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+
+.today-trash {
+    font-size: 2vw;
 }
 
 #trash-contents {
     padding-top: 15px;
     padding-bottom: 25px;
-    border-bottom: 1px solid white;
 }
 
 .train {
@@ -47,6 +51,7 @@ span {
 
 .train-txt {
     letter-spacing: 5px;
+    font-size: 2vw;
 }
 
 #train-time {

@@ -25,7 +25,7 @@ function clock() {
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = h + ":" + mi + ":" + s;
     document.getElementById("left-side").style.fontSize = window.innerWidth / 9 + "px";
-    document.getElementById("right-side").style.fontSize = window.innerWidth / 35 + "px";
+    // document.getElementById("right-side").style.fontSize = window.innerWidth / 35 + "px";
 }
 
 setInterval(clock, 1000);
@@ -91,7 +91,7 @@ function getNextTrainTime(a, getCurrentTime) {
         document.getElementById("train-time").style.fontSize = "small";
         return "本日の電車は終了しました。";
     } else {
-        document.getElementById("train-time").style.fontSize = "medium";
+        document.getElementById("train-time").style.fontSize = "small";
         return minSubString;
     }
 }
@@ -153,8 +153,9 @@ var holiday2 = [
 ];
 
 for (var j = 0; j < holiday2.length; j++) {
-    var day = getWeekOfDay(holiday2[j][0], holiday2[j][1], holiday2[j][2], holiday2[j][3]);
-    if (mo === holiday2[j][1] && d === day) {
+    var next = holiday2[j]; // 何度も使うものは変数にしまって書きやすくする
+    var day = getWeekOfDay(next[0], next[1], next[2], next[3]);
+    if (mo === next[1] && d === day) {
         document.getElementById("train-time").innerHTML = getNextTrainTime(holSchedule, getCurrentTime());
         break;
     }
