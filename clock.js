@@ -32,7 +32,7 @@ function clock() {
     if (mi < 10) mi = "0" + mi;
     if (s < 10) s = "0" + s;
 
-    var time = h + ":" + mi + ":" + s;
+    var time = h + ":" + mi + ":" + s; // ↑で先に0と数字をくっつけてから変数に入れる
 
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = time;
@@ -41,7 +41,7 @@ function clock() {
 
     var cssFile = document.getElementById("timeCSS");
     if (time >= "00:00:00" && time <= "06:59:59") {
-        cssFile.href = "clock0.css";
+        cssFile.href = "clock0.css"; // "css/clock0.css" <= "/" の前は　ダイレクトリー
     }
     else {
         cssFile.href = "clock7.css";
