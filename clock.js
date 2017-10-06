@@ -27,12 +27,12 @@ function clock() {
     var mi = now.getMinutes();
     var s = now.getSeconds();
 
-    var time = h + ":" + mi + ":" + s;
-
     if (mo < 10) mo = "0" + mo;
     if (d < 10) d = "0" + d;
     if (mi < 10) mi = "0" + mi;
     if (s < 10) s = "0" + s;
+
+    var time = h + ":" + mi + ":" + s;
 
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = time;
@@ -41,14 +41,15 @@ function clock() {
 
     var cssFile = document.getElementById("timeCSS");
     if (time >= "00:00:00" && time <= "06:59:59") {
-        cssFile.href = "css/clock0.css";
+        cssFile.href = "clock0.css";
     }
     else {
-        cssFile.href = "css/clock7.css";
+        cssFile.href = "clock7.css";
     }
 }
 
 setInterval(clock, 1000);
+clock();
 
 function trash() {
     var now = new Date();
