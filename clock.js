@@ -1,10 +1,20 @@
 var daySchedule = [ // 平日
-    "9:22", "9:32", "9:42", "15:20"
+    "9:22", "9:32", "9:42", "15:50"
 ];
 var holSchedule = [ // 土日
     "9:15", "9:25", "9:35", "11:30"
 ];
-
+/*
+function changeColor(time) {
+    var cssFile = document.getElementById("timeCSS");
+    if (time >= "00:00:00" && time <= "06:59:59") {
+        cssFile.href = "css/clock0.css";
+    }
+    else {
+        cssFile.href = "css/clock7.css";
+    }
+}
+*/
 var weeks = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
 
 function clock() {
@@ -17,15 +27,25 @@ function clock() {
     var mi = now.getMinutes();
     var s = now.getSeconds();
 
+    var time = h + ":" + mi + ":" + s;
+
     if (mo < 10) mo = "0" + mo;
     if (d < 10) d = "0" + d;
     if (mi < 10) mi = "0" + mi;
     if (s < 10) s = "0" + s;
 
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
-    document.getElementById("time").innerHTML = h + ":" + mi + ":" + s;
+    document.getElementById("time").innerHTML = time;
     document.getElementById("left-side").style.fontSize = window.innerWidth / 9 + "px";
     document.getElementById("right-side").style.fontSize = window.innerWidth / 45 + "px";
+
+    var cssFile = document.getElementById("timeCSS");
+    if (time >= "00:00:00" && time <= "06:59:59") {
+        cssFile.href = "css/clock0.css";
+    }
+    else {
+        cssFile.href = "css/clock7.css";
+    }
 }
 
 setInterval(clock, 1000);
