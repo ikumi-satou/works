@@ -36,7 +36,6 @@ span {
 }
 
 #trash-contents {
-    font-size: 1em;
     padding-top: 15px;
     padding-bottom: 25px;
     border-bottom: 1px solid white;
@@ -51,6 +50,5 @@ span {
 }
 
 #train-time {
-    font-size: 0.5em;
     padding-top: 1em;
 }
