@@ -37,7 +37,7 @@ span {
 }
 
 .today-trash {
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
 #trash-contents {
@@ -51,7 +51,7 @@ span {
 
 .train-txt {
     letter-spacing: 5px;
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
 #train-time {
