@@ -138,7 +138,7 @@ function getWeekOfDay(year, month, week, day) {
 
     // 求めたい曜日の第1週の日付けを計算
     var date2 = day - firstDay + 1;
-    if(date2 <= 0) {
+    if (date2 <= 0) {
         day += 7;
     }
 
@@ -151,9 +151,9 @@ var holiday2 = [
     [2017, 1, 2, 1], [2017, 7, 3, 1], [2017, 9, 3, 1], [2017, 10, 2, 1]
 ];
 
-for(var j = 0; j < holiday2.length; j++) {
+for (var j = 0; j < holiday2.length; j++) {
     var day = getWeekOfDay(holiday2[j][0], holiday2[j][1], holiday2[j][2], holiday2[j][3]);
-    if(mo === holiday2[j][1] && d === day) {
+    if (mo === holiday2[j][1] && d === day) {
         document.getElementById("train-time").innerHTML = getNextTrainTime(holSchedule, getCurrentTime());
         break;
     }
