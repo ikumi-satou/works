@@ -193,7 +193,7 @@ function makeWeatherRequest(urlParams, cb) {
     xhr.withCredentials = false;
 
     var targetUrl = weatherApiUrl + urlParams;
-    var proxyUrl = "http://cors-allow.azurewebsites.net/?url=" + encodeURIComponent(targetUrl);
+    var proxyUrl = "https://cors-allow.azurewebsites.net/?url=" + encodeURIComponent(targetUrl);
 
     xhr.open("GET", proxyUrl, true);
     xhr.setRequestHeader("Accept", "application/json");
