@@ -29,11 +29,12 @@ span {
     padding: 2.5em;
     width: 40%;
     text-align: center;
+    height: 50%;
 }
 
 .trash {
-    padding-bottom: 10px;
     border-bottom: 1px solid lightskyblue;
+    height: 15rem;
 }
 
 .today-trash {
@@ -41,6 +42,21 @@ span {
 }
 
 #trash-contents {
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.weather {
+    border-bottom: 1px solid lightskyblue;
+    height: 15rem;
+}
+
+.today-weather {
+    font-size: 1.5vw;
+    letter-spacing: 3px;
+}
+
+#weather-contents {
     padding-top: 15px;
     padding-bottom: 25px;
 }
@@ -56,4 +72,13 @@ span {
 
 #train-time {
     padding-top: 1em;
+}
+
+.hide {
+    display: none;
+}
+
+#publicTime {
+    padding-top: 5rem;
+    font-size: small;
 }

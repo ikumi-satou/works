@@ -4,17 +4,7 @@ var daySchedule = [ // 平日
 var holSchedule = [ // 土日
     "9:15", "9:25", "9:35", "11:30"
 ];
-/*
-function changeColor(time) {
-    var cssFile = document.getElementById("timeCSS");
-    if (time >= "00:00:00" && time <= "06:59:59") {
-        cssFile.href = "css/clock0.css";
-    }
-    else {
-        cssFile.href = "css/clock7.css";
-    }
-}
-*/
+
 var weeks = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
 
 function clock() {
@@ -39,9 +29,10 @@ function clock() {
     document.getElementById("left-side").style.fontSize = window.innerWidth / 9 + "px";
     document.getElementById("right-side").style.fontSize = window.innerWidth / 45 + "px";
 
+    // 時間帯でCSSファイル切り替え
     var cssFile = document.getElementById("timeCSS");
     if (time >= "00:00:00" && time <= "06:59:59") {
-        cssFile.href = "clock0.css"; // "css/clock0.css" <= "/" の前は　ダイレクトリー
+        cssFile.href = "clock0.css";
     }
     else {
         cssFile.href = "clock7.css";
@@ -49,7 +40,7 @@ function clock() {
 }
 
 setInterval(clock, 1000);
-clock();
+clock(); // このclockがないとページを更新した時に一瞬時計が映らない。最初から映す為に直接実行（ちなみに順番は関係なし）
 
 function trash() {
     var now = new Date();
@@ -180,3 +171,37 @@ for (var j = 0; j < holiday2.length; j++) {
         break;
     }
 }
+
+function toggleTrashandWeather() {
+    var trash = document.getElementById("trash-contents").parentNode; // parentNode => Idの親要素を取得（hideしたいのは親要素）
+    trash.classList.toggle("hide"); // 親要素にclass hideがあるのでclassList.toggleはhideを削除する
+    var weather = document.getElementById("weather-contents").parentNode;
+    weather.classList.toggle("hide"); // 親要素にclass hideがないのでclassList.toggleはhideを追加する
+}
+
+setInterval(toggleTrashandWeather, 3500);
+
+var weatherApiUrl = "http://weather.livedoor.com/forecast/webservice/json/v1";
+
+function makeWeatherRequest(urlParams, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        var result = JSON.parse(xhr.responseText);
+        cb(result);
+    };
+
+    xhr.withCredentials = false;
+
+    var targetUrl = weatherApiUrl + urlParams;
+    var proxyUrl = "http://cors-allow.azurewebsites.net/?url=" + encodeURIComponent(targetUrl);
+
+    xhr.open("GET", proxyUrl, true);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.send();
+}
+
+makeWeatherRequest("?city=110010", function (response) {
+    document.getElementById("weather-contents").style.fontSize = "x-large";
+    document.getElementById("weather-contents").innerHTML = response["forecasts"][0]["telop"] + "<br>" + "<img src=" + response["forecasts"][0]["image"]["url"] + ">";
+    document.getElementById("publicTime").innerHTML = "予報発表時間: " + response["publicTime"];
+});
