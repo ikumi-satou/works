@@ -34,7 +34,7 @@ span {
 
 .trash {
     border-bottom: 1px solid lightskyblue;
-    height: 15rem;
+    height: 13rem;
 }
 
 .today-trash {
@@ -48,7 +48,7 @@ span {
 
 .weather {
     border-bottom: 1px solid lightskyblue;
-    height: 15rem;
+    height: 13rem;
 }
 
 .today-weather {
@@ -80,5 +80,5 @@ span {
 
 #publicTime {
     padding-top: 5rem;
-    font-size: small;
+    font-size: x-small;
 }

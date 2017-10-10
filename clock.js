@@ -201,7 +201,7 @@ function makeWeatherRequest(urlParams, cb) {
 }
 
 makeWeatherRequest("?city=110010", function (response) {
-    document.getElementById("weather-contents").style.fontSize = "x-large";
+    document.getElementById("weather-contents").style.fontSize = "large";
     document.getElementById("weather-contents").innerHTML = response["forecasts"][0]["telop"] + "<br>" + "<img src=\"" + response["forecasts"][0]["image"]["url"] + "\">";
     document.getElementById("publicTime").innerHTML = "予報発表時間：" + response["publicTime"];
 });
