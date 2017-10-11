@@ -22,7 +22,7 @@ function clock() {
     if (mi < 10) mi = "0" + mi;
     if (s < 10) s = "0" + s;
 
-    var time = "01:00:00"; // h + ":" + mi + ":" + s; // ↑で先に0と数字をくっつけてから変数に入れる
+    var time = h + ":" + mi + ":" + s; // ↑で先に0と数字をくっつけてから変数に入れる
 
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = time;
