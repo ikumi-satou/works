@@ -26,15 +26,21 @@ span {
 
 #right-side {
     float: right;
-    padding: 2.5em;
-    width: 40%;
+    padding: 3em 4em 3em 3em;
     text-align: center;
     height: 50%;
 }
 
+.slide {
+    height: 20rem;
+    width: 30rem;
+    overflow: hidden;
+}
+
 .trash {
-    border-bottom: 1px solid white;
-    height: 10rem;
+    height: 20rem;
+    float: left;
+    width: 100%;
 }
 
 .today-trash {
@@ -47,8 +53,9 @@ span {
 }
 
 .weather {
-    border-bottom: 1px solid white;
-    height: 10rem;
+    height: 20rem;
+    float: left;
+    width: 25rem;
 }
 
 .today-weather {
@@ -61,8 +68,13 @@ span {
     padding-bottom: 25px;
 }
 
+.border {
+    border-bottom: 1px solid white;
+}
+
 .train {
     padding-top: 0.5em;
+    display: inline-block;
 }
 
 .train-txt {

@@ -7,6 +7,8 @@ var holSchedule = [ // 土日
 
 var weeks = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
 
+var isClock7 = true;
+
 function clock() {
     var now = new Date();
     var y = now.getFullYear();
@@ -32,10 +34,16 @@ function clock() {
     // 時間帯でCSSファイル切り替え
     var cssFile = document.getElementById("timeCSS");
     if (time >= "00:00:00" && time <= "06:59:59") {
-        cssFile.href = "clock0.css";
+        if (isClock7) {
+            cssFile.href = "clock0.css";
+            isClock7 = false;
+        }
     }
     else {
-        cssFile.href = "clock7.css";
+        if (!isClock7) {
+            cssFile.href = "clock7.css";
+            isClock7 = true;
+        }
     }
 }
 
@@ -44,7 +52,7 @@ clock(); // このclockがないとページを更新した時に一瞬時計が
 
 function trash() {
     var now = new Date();
-    var contents = ["もえるゴミ", "プラスチック", "もえないゴミ"];
+    var contents = ["もえるゴミ", "プラスチック", "もえないゴミ", "なし"];
     var w = now.getDay();
 
     switch (w) {
@@ -59,7 +67,7 @@ function trash() {
             document.getElementById("trash-contents").innerHTML = contents[2];
             break;
         default:
-            document.getElementById("trash-contents").innerHTML = "　";
+            document.getElementById("trash-contents").innerHTML = contents[3];
             break;
     }
 }
@@ -172,15 +180,6 @@ for (var j = 0; j < holiday2.length; j++) {
     }
 }
 
-function toggleTrashandWeather() {
-    var trash = document.getElementById("trash-contents").parentNode; // parentNode => Idの親要素を取得（hideしたいのは親要素）
-    trash.classList.toggle("hide"); // 親要素にclass hideがあるのでclassList.toggleはhideを削除する
-    var weather = document.getElementById("weather-contents").parentNode;
-    weather.classList.toggle("hide"); // 親要素にclass hideがないのでclassList.toggleはhideを追加する
-}
-
-setInterval(toggleTrashandWeather, 3500);
-
 var weatherApiUrl = "http://weather.livedoor.com/forecast/webservice/json/v1";
 
 function makeWeatherRequest(urlParams, cb) {
@@ -205,3 +204,29 @@ makeWeatherRequest("?city=110010", function (response) {
     document.getElementById("weather-contents").innerHTML = response["forecasts"][0]["telop"] + "<br>" + "<img src=\"" + response["forecasts"][0]["image"]["url"] + "\">";
     document.getElementById("publicTime").innerHTML = "予報発表時間：" + response["publicTime"];
 });
+
+// スライド
+
+var time = 3500;
+var a = 0;
+
+function slide() {
+    console.log(a);
+    $('.trash').animate({
+        marginLeft: -300
+    }, time);
+    $('.weather').animate({
+        marginLeft: 25
+    }, time);
+    setTimeout(function () {
+        $('.trash').animate({
+            marginLeft: 0
+        }, time);
+        $('.weather').animate({
+            marginLeft: 0
+        }, time);
+        a++;
+    }, 7000);
+}
+    slide();
+    setInterval(slide, 14000);
