@@ -24,7 +24,7 @@ function clock() {
     if (mi < 10) mi = "0" + mi;
     if (s < 10) s = "0" + s;
 
-    var time = "01:00:00"; // h + ":" + mi + ":" + s; // ↑で先に0と数字をくっつけてから変数に入れる
+    var time = h + ":" + mi + ":" + s; // ↑で先に0と数字をくっつけてから変数に入れる
 
     document.getElementById("date").innerHTML = y + "/" + mo + "/" + d + "(" + w + ")";
     document.getElementById("time").innerHTML = time;
@@ -211,7 +211,6 @@ var time = 3500;
 var a = 0;
 
 function slide() {
-    console.log(a);
     $('.trash').animate({
         marginLeft: -300
     }, time);
@@ -225,7 +224,6 @@ function slide() {
         $('.weather').animate({
             marginLeft: 0
         }, time);
-        a++;
     }, 7000);
 }
     slide();

@@ -70,6 +70,7 @@ span {
 
 .border {
     border-bottom: 1px solid lightskyblue;
+    width: 30rem;
 }
 
 .train {
