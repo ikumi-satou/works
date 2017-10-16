@@ -31,16 +31,44 @@ span {
     height: 50%;
 }
 
-.slide {
-    height: 20rem;
-    width: 30rem;
-    overflow: hidden;
+@media screen and (min-width: 480px){
+    .slide {
+        height: 10rem;
+        width: 20rem;
+        overflow: hidden;
+    }
+
+    .trash {
+        height: 10rem;
+        float: left;
+        width: 100%;
+    }
+
+    .weather {
+        height: 10rem;
+        float: left;
+        width: 16rem;
+    }
 }
 
-.trash {
-    height: 20rem;
-    float: left;
-    width: 100%;
+@media screen and (min-width: 800px) {
+    .slide {
+        height: 15rem;
+        width: 30rem;
+        overflow: hidden;
+    }
+
+    .trash {
+        height: 20rem;
+        float: left;
+        width: 100%;
+    }
+
+    .weather {
+        height: 20rem;
+        float: left;
+        width: 25rem;
+    }
 }
 
 .today-trash {
@@ -50,12 +78,6 @@ span {
 #trash-contents {
     padding-top: 15px;
     padding-bottom: 25px;
-}
-
-.weather {
-    height: 20rem;
-    float: left;
-    width: 25rem;
 }
 
 .today-weather {
@@ -70,7 +92,6 @@ span {
 
 .border {
     border-bottom: 1px solid lightskyblue;
-    width: 30rem;
 }
 
 .train {

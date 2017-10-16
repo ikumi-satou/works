@@ -208,7 +208,6 @@ makeWeatherRequest("?city=110010", function (response) {
 // スライド
 
 var time = 3500;
-var a = 0;
 
 function slide() {
     $('.trash').animate({
