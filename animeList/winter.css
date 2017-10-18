@@ -1,0 +1,23 @@
+body {
+    background-color: lightblue;
+    color: white;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main-title {
+    text-align: center;
+}
+
+.dayOfWeek {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.list li {
+    padding: 5px 0;
+}

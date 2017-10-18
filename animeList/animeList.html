@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <title>Anime List</title>
+    <link rel="stylesheet" href="spring.css" id="seasonCss">
+</head>
+<body>
+<h1 class="main-title">【<span id="season"></span>アニメ一覧】</h1>
+    <table border="0">
+        <tr>
+            <td align="right"><b>Day：</b></td>
+            <td>
+                <select id="select" name="day">
+                    <option value="Sun">Sun</option>
+                    <option value="Mon">Mon</option>
+                    <option value="Tue">Tue</option>
+                    <option value="Wed">Wed</option>
+                    <option value="Thr">Thr</option>
+                    <option value="Fri">Fri</option>
+                    <option value="Sat">Sat</option>
+                </select>
+                <label><input type="radio" name="time" value="昼" checked><b>昼</b></label>
+                <label><input type="radio" name="time" value="夜"><b>夜</b></label>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"><b>Title：</b></td>
+            <td><input id="id_title" type="text" name="title" size="40"></td>
+        </tr>
+        <tr>
+            <td><button onclick="addTitle()">Submit</button></td>
+        </tr>
+    </table>
+
+<div class="list">
+<ul>
+    <li class="dayOfWeek">[Sun]</li>
+    <li>（昼）<span id="sun_noon"></span></li>
+    <li>（夜）<span id="sun_night"></span></li>
+    <li class="dayOfWeek">[Mon]</li>
+    <li>（昼）<span id="mon_noon"></span></li>
+    <li>（夜）<span id="mon_night"></span></li>
+    <li class="dayOfWeek">[Tue]</li>
+    <li>（昼）<span id="tue_noon"></span></li>
+    <li>（夜）<span id="tue_night"></span></li>
+    <li class="dayOfWeek">[Wed]</li>
+    <li>（昼）<span id="wed_noon"></span></li>
+    <li>（夜）<span id="wed_night"></span></li>
+    <li class="dayOfWeek">[Thr]</li>
+    <li>（昼）<span id="thr_noon"></span></li>
+    <li>（夜）<span id="thr_night"></span></li>
+    <li class="dayOfWeek">[Fri]</li>
+    <li>（昼）<span id="fri_noon"></span></li>
+    <li>（夜）<span id="fri_night"></span></li>
+    <li class="dayOfWeek">[Sat]</li>
+    <li>（昼）<span id="sat_noon"></span></li>
+    <li>（夜）<span id="sat_night"></span></li>
+</ul>
+</div>
+
+<script type="text/javascript" src="animeList.js"></script>
+</body>
+</html>
