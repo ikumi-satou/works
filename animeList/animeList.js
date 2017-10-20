@@ -6,11 +6,11 @@ window.onload = function () {
     }
     for (var i = 0; i < localStorage.length; ++i) {
         var targetId = localStorage.key(i); // keyは関数＝>普通のかっこ()を使う
-        var titleList = loadData(targetId, []);
+        var savedData = loadData(targetId, []);
 
-        for (var j = 0; j < titleList.length; ++j){
-          var title = titleList[j];
-          addAnime(title, targetId)
+        for (var j = 0; j < savedData.length; ++j) {
+            var title = savedData[j];
+            addAnime(title, targetId)
         }
     }
 };
@@ -28,7 +28,7 @@ function loadData(name, defaultValue) {
     }
 }
 
-// 曜日・昼夜・タイトルを取得して、jQueryでhtmlにテキストを追加
+// 曜日・昼夜・タイトルを取得して、addAnimeでhtmlにテキストを記入＆localStorageにデータ保存
 function addTitle() {
     var date = document.getElementById("select").value;
 
@@ -55,10 +55,10 @@ function addTitle() {
     savedData.push(title);
     saveData(targetId, savedData);
 
-    // localStorage.clear();
     document.getElementById("id_title").value = "";
 }
 
+// 要素を追加＆削除したtitleを保存
 function addAnime(title, targetId) {
     var getId = document.getElementById(targetId);
 
