@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1 class="main-title">【<span id="season"></span>アニメ一覧】</h1>
+<p id="restext"></p>
     <table border="0">
         <tr>
             <td align="right"><b>Day：</b></td>
@@ -28,11 +29,8 @@
         </tr>
         <tr>
             <td align="right"><b>Title：</b></td>
-            <td><input id="id_title" type="text" name="title" size="40"></td>
-        </tr>
-        <tr>
-            <td><button onclick="addTitle()">Submit</button></td>
-        </tr>
+            <td><textarea id="id_title" name="title" rows="2" cols="30"></textarea></td>
+            <td><button onclick="addTitle()" class="btn">Submit</button></td>
     </table>
 
 <div class="list">
