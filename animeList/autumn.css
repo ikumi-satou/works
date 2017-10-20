@@ -21,3 +21,11 @@ li {
 .list li {
     padding: 5px 0;
 }
+
+#id_title {
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+}
