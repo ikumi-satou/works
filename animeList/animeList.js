@@ -28,11 +28,7 @@ function loadData(name, defaultValue) {
     }
 }
 
-// console.log(loadData("hoge", 1));
-// console.log(saveData("hoge", [7, 23, "犬"]));
-
 // 曜日・昼夜・タイトルを取得して、jQueryでhtmlにテキストを追加
-
 function addTitle() {
     var date = document.getElementById("select").value;
 
