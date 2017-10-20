@@ -13,11 +13,27 @@ li {
     text-align: center;
 }
 
-.dayOfWeek {
-    font-size: x-large;
-    font-weight: bold;
-}
-
 .list li {
     padding: 5px 0;
+}
+
+@media screen and (min-width: 480px) {
+    textarea {
+        width: 262px;
+    }
+    .dayOfWeek {
+        font-size: x-large;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    textarea {
+        width: 142px;
+    }
+
+    .dayOfWeek {
+        font-size: large;
+        font-weight: bold;
+    }
 }
