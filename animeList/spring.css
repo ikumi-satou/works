@@ -24,10 +24,12 @@ li {
     }
 
     .label {
+        background-color: lavenderblush;
         font-size: large;
         font-weight: bold;
         cursor: pointer;
         display: block;
+        border-bottom: 1px solid snow;
     }
 
     .list {
