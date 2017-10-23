@@ -10,53 +10,74 @@
 <body>
 <p class="main-title">【<span id="season"></span>アニメ一覧】</p>
 <p id="restext"></p>
-    <table border="0">
-        <tr>
-            <td align="right"><b>Day：</b></td>
-            <td>
-                <select id="select" name="day">
-                    <option value="Sun">Sun</option>
-                    <option value="Mon">Mon</option>
-                    <option value="Tue">Tue</option>
-                    <option value="Wed">Wed</option>
-                    <option value="Thr">Thr</option>
-                    <option value="Fri">Fri</option>
-                    <option value="Sat">Sat</option>
-                </select>
-                <label><input type="radio" name="time" value="昼" checked><b>昼</b></label>
-                <label><input type="radio" name="time" value="夜"><b>夜</b></label>
-            </td>
-        </tr>
-        <tr>
-            <td align="right"><b>Title：</b></td>
-            <td><textarea id="id_title" name="title" rows="2"></textarea></td>
-            <td><button onclick="addTitle()" class="btn">Submit</button></td>
-    </table>
+<table border="0">
+    <tr>
+        <td align="right"><b>Day：</b></td>
+        <td>
+            <select id="select" name="day">
+                <option value="Sun">Sun</option>
+                <option value="Mon">Mon</option>
+                <option value="Tue">Tue</option>
+                <option value="Wed">Wed</option>
+                <option value="Thr">Thr</option>
+                <option value="Fri">Fri</option>
+                <option value="Sat">Sat</option>
+            </select>
+            <label><input type="radio" name="time" value="昼" checked><b>昼</b></label>
+            <label><input type="radio" name="time" value="夜"><b>夜</b></label>
+        </td>
+    </tr>
+    <tr>
+        <td align="right"><b>Title：</b></td>
+        <td><textarea id="id_title" name="title" rows="2"></textarea></td>
+        <td>
+            <button onclick="addTitle()" class="btn">Submit</button>
+        </td>
+</table>
 
 <div class="list">
-<ul>
-    <li class="dayOfWeek">[Sun]</li>
-    <li>（昼）<span id="sun_noon"></span></li>
-    <li>（夜）<span id="sun_night"></span></li>
-    <li class="dayOfWeek">[Mon]</li>
-    <li>（昼）<span id="mon_noon"></span></li>
-    <li>（夜）<span id="mon_night"></span></li>
-    <li class="dayOfWeek">[Tue]</li>
-    <li>（昼）<span id="tue_noon"></span></li>
-    <li>（夜）<span id="tue_night"></span></li>
-    <li class="dayOfWeek">[Wed]</li>
-    <li>（昼）<span id="wed_noon"></span></li>
-    <li>（夜）<span id="wed_night"></span></li>
-    <li class="dayOfWeek">[Thr]</li>
-    <li>（昼）<span id="thr_noon"></span></li>
-    <li>（夜）<span id="thr_night"></span></li>
-    <li class="dayOfWeek">[Fri]</li>
-    <li>（昼）<span id="fri_noon"></span></li>
-    <li>（夜）<span id="fri_night"></span></li>
-    <li class="dayOfWeek">[Sat]</li>
-    <li>（昼）<span id="sat_noon"></span></li>
-    <li>（夜）<span id="sat_night"></span></li>
-</ul>
+        <label for="sun" class="label">[Sun]</label>
+        <input type="checkbox" class="day" id="sun">
+    <ul>
+        <li>（昼）<span id="sun_noon"></span></li>
+        <li>（夜）<span id="sun_night"></span></li>
+    </ul>
+        <label for="mon" class="label">[Mon]</label>
+    <input type="checkbox" class="day" id="mon">
+    <ul>
+        <li>（昼）<span id="mon_noon"></span></li>
+        <li>（夜）<span id="mon_night"></span></li>
+    </ul>
+        <label for="tue" class="label">[Tue]</label>
+        <input type="checkbox" class="day" id="tue">
+    <ul>
+        <li>（昼）<span id="tue_noon"></span></li>
+        <li>（夜）<span id="tue_night"></span></li>
+    </ul>
+        <label for="wed" class="label">[Wed]</label>
+        <input type="checkbox" class="day" id="wed">
+    <ul>
+        <li>（昼）<span id="wed_noon"></span></li>
+        <li>（夜）<span id="wed_night"></span></li>
+    </ul>
+        <label for="thr" class="label">[Thr]</label>
+        <input type="checkbox" class="day" id="thr">
+    <ul>
+        <li>（昼）<span id="thr_noon"></span></li>
+        <li>（夜）<span id="thr_night"></span></li>
+    </ul>
+        <label for="fri" class="label">[Fri]</label>
+        <input type="checkbox" class="day" id="fri">
+    <ul>
+        <li>（昼）<span id="fri_noon"></span></li>
+        <li>（夜）<span id="fri_night"></span></li>
+    </ul>
+        <label for="sat" class="label">[Sat]</label>
+        <input type="checkbox" class="day" id="sat">
+    <ul>
+        <li>（昼）<span id="sat_noon"></span></li>
+        <li>（夜）<span id="sat_night"></span></li>
+    </ul>
 </div>
 <script type="text/javascript" src="animeList.js"></script>
 </body>

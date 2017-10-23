@@ -6,16 +6,11 @@ li {
     text-align: center;
 }
 
-.dayOfWeek {
-    font-size: x-large;
-    font-weight: bold;
-}
-
 .list li {
     padding: 5px 0;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 640px) {
     body {
         background-color: lightblue;
         color: white;
@@ -26,12 +21,47 @@ li {
     .main-title {
         font-size: xx-large;
     }
+
     textarea {
-        width: 142px;
+        width: 200px;
     }
-    .dayOfWeek {
-        font-size: x-large;
+
+    .label {
+        font-size: large;
         font-weight: bold;
+        display: block;
+        cursor: pointer;
+        pointer-events: all;
+    }
+
+    .list li {
+        display: block;
+    }
+
+    .day {
+        display: none;
+    }
+
+    .list ul {
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        list-style: none;
+    }
+
+    input[type="checkbox"].day + ul {
+        height: 0;
+        overflow-y: hidden;
+    }
+
+    input[type="checkbox"].day:checked + ul {
+        height: 68px;
+        opacity: 1;
     }
 }
 
@@ -47,12 +77,28 @@ li {
     .main-title {
         font-size: xx-large;
     }
+
+    table {
+        padding-bottom: 50px;
+    }
+
     textarea {
         width: 262px;
     }
 
-    .dayOfWeek {
-        font-size: large;
+    .label {
+        font-size: x-large;
         font-weight: bold;
+        display: block;
+        padding-left: 50px;
+    }
+
+    .day {
+        display: none;
+    }
+
+    .list ul {
+        margin: 0;
+        list-style: none;
     }
 }
