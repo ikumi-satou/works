@@ -6,11 +6,6 @@ li {
     text-align: center;
 }
 
-.dayOfWeek {
-    font-size: x-large;
-    font-weight: bold;
-}
-
 .list li {
     padding: 5px 0;
 }
@@ -27,7 +22,7 @@ li {
         font-size: xx-large;
     }
     textarea {
-        width: 262px;
+        width: 142px;
     }
     .dayOfWeek {
         font-size: x-large;
