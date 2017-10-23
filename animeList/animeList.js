@@ -5,7 +5,7 @@ window.onload = function () {
         restext.innerText = "Web Storageに対応していません。";
     }
     for (var i = 0; i < localStorage.length; ++i) {
-        var targetId = localStorage.key(i); // keyは関数＝>普通のかっこ()を使う
+        var targetId = localStorage.key(i);
         var savedData = loadData(targetId, []);
 
         for (var j = 0; j < savedData.length; ++j) {
@@ -49,7 +49,13 @@ function addTitle() {
 
     var targetId = date.toLowerCase() + "_" + time2;
 
-    addAnime(title, targetId);
+    if (title === "") {
+        alert("タイトルを入力してください。");
+        return false;
+    }
+    else {
+        addAnime(title, targetId);
+    }
 
     var savedData = loadData(targetId, []);
     savedData.push(title);
@@ -66,13 +72,7 @@ function addAnime(title, targetId) {
     var span = $("<span></span>");
     var button = $("<button>X</button>");
 
-    if (title === "") {
-        alert("タイトルを入力してください。");
-        return false;
-    }
-    else {
-        span.text(" " + title);
-    }
+    span.text(" " + title);
 
     button.click(function () {
         span.remove();
