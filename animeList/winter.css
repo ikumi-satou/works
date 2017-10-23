@@ -6,16 +6,13 @@ li {
     text-align: center;
 }
 
-.list li {
-    padding: 5px 0;
-}
-
 @media screen and (max-width: 640px) {
     body {
         background-color: lightblue;
         color: white;
         font-family: Meiryo, 'メイリオ', 'Yu Gothic', 'YuGothic';
         width: 100%;
+        margin: 0 auto;
     }
 
     .main-title {
@@ -29,12 +26,30 @@ li {
     .label {
         font-size: large;
         font-weight: bold;
-        display: block;
         cursor: pointer;
-        pointer-events: all;
+        display: block;
+    }
+
+    .list {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .list ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
     .list li {
+        max-height: 0;
+        overflow-y: hidden;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        opacity: 0;
         display: block;
     }
 
@@ -42,25 +57,19 @@ li {
         display: none;
     }
 
-    .list ul {
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        margin: 0;
-        padding: 0;
-        opacity: 0;
-        list-style: none;
+    .day:checked + .label {
+        background-color: lightblue;
+        color: white;
     }
 
-    input[type="checkbox"].day + ul {
-        height: 0;
-        overflow-y: hidden;
-    }
-
-    input[type="checkbox"].day:checked + ul {
-        height: 68px;
+    #sun:checked ~ #list1 li,
+    #mon:checked ~ #list2 li,
+    #tue:checked ~ #list3 li,
+    #wed:checked ~ #list4 li,
+    #thr:checked ~ #list5 li,
+    #fri:checked ~ #list6 li,
+    #sat:checked ~ #list7 li {
+        max-height: 68px;
         opacity: 1;
     }
 }
