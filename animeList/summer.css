@@ -71,7 +71,7 @@ li {
     #thr:checked ~ #list5 li,
     #fri:checked ~ #list6 li,
     #sat:checked ~ #list7 li {
-        max-height: 68px;
+        max-height: 48px;
         opacity: 1;
     }
 }
