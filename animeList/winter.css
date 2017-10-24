@@ -25,7 +25,7 @@ li {
 
     .label {
         background-color: powderblue;
-        font-size: large;
+        font-size: x-large;
         font-weight: bold;
         cursor: pointer;
         display: block;
@@ -60,8 +60,8 @@ li {
     }
 
     .day:checked + .label {
-        background-color: lightblue;
-        color: white;
+        background-color: white;
+        color: lightblue;
     }
 
     #sun:checked ~ #list1 li,
@@ -111,5 +111,9 @@ li {
     .list ul {
         margin: 0;
         list-style: none;
+    }
+
+    .list li {
+        padding: 5px 0;
     }
 }

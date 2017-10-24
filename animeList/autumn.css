@@ -112,4 +112,8 @@ li {
         margin: 0;
         list-style: none;
     }
+
+    .list li {
+        padding: 5px 0;
+    }
 }

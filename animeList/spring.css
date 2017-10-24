@@ -25,7 +25,7 @@ li {
 
     .label {
         background-color: lavenderblush;
-        font-size: large;
+        font-size: x-large;
         font-weight: bold;
         cursor: pointer;
         display: block;
@@ -111,5 +111,9 @@ li {
     .list ul {
         margin: 0;
         list-style: none;
+    }
+
+    .list li {
+        padding: 5px 0;
     }
 }
