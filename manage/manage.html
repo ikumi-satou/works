@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>栄養管理</title>
+    <link rel="stylesheet" href="manage.css">
+</head>
+<body onload="createList()">
+<h1 class="main-title">【栄養バランスチェック】</h1>
+<div class="ryg">
+    <div class="wrap block-red">
+        <div class="contener">
+            <div class="target">
+                <input type="checkbox" id="red" class="check">
+                <label for="red" class="label red"><b>赤</b><br>肉、魚、卵、牛乳・乳製品、豆など</label>
+            </div>
+        </div>
+        <div class="table-target">
+            <table border="0">
+                <tr class="meat">
+                    <td align="right">種類：</td>
+                    <td>
+                        <select id="select1" name="food-red" onchange="createList2()"></select>
+                        <select id="detail1"></select>
+                        <input type="text" id="number1" size="10">
+                        <label><input type="radio" id="gram1" name="unit1" value="ｇ" checked>ｇ</label>
+                        <label><input type="radio" id="ml1" name="unit1" value="ml">ml</label>
+                        <button onclick="addList('select1', 'detail1', 'number1', 'unit1')" id="btn1">追加</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="wrap block-yellow">
+        <div class="target">
+            <input type="checkbox" id="yellow" class="check">
+            <label for="yellow" class="label yellow"><b>黄</b><br>米、パン、めん類、いも類、油、砂糖など</label>
+        </div>
+        <div class="table-target rice">
+            <table border="0">
+                <tr>
+                    <td align="right">種類：</td>
+                    <td>
+                        <select id="select2" name="food-yellow" onchange="createList3()"></select>
+                        <select id="detail2"></select>
+                        <input type="text" id="number2" size="10">
+                        <label><input type="radio" id="gram2" name="unit2" value="ｇ" checked>ｇ</label>
+                        <label><input type="radio" id="ml2" name="unit2" value="ml">ml</label>
+                        <button onclick="addList('select2', 'detail2', 'number2', 'unit2')" id="btn2">追加</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="wrap block-green">
+        <div class="target">
+            <input type="checkbox" id="green" class="check">
+            <label for="green" class="label green"><b>緑</b><br>野菜、果物、きのこ類など</label>
+        </div>
+        <div class="table-target vegetable">
+            <table border="0">
+                <tr>
+                    <td align="right">種類：</td>
+                    <td>
+                        <select id="select3" name="food-green" onchange="createList4()"></select>
+                        <select id="detail3"></select>
+                        <input type="text" id="number3" size="10">
+                        <label><input type="radio" id="gram3" name="unit3" value="ｇ" checked>ｇ</label>
+                        <label><input type="radio" id="ml3" name="unit3" value="ml">ml</label>
+                        <button onclick="addList('select3', 'detail3', 'number3', 'unit3')" id="btn3">追加</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="arrow"></div>
+
+<div class="food-list">
+    <h2 class="title-list">食品リスト</h2>
+    <div class="border"></div>
+    <ol id="add-list">
+    </ol>
+    <button onclick="searchName()" id="check-btn">チェック</button>
+</div>
+<script type="text/javascript" src="manage.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@ var holSchedule = [ // 土日
     "9:15", "9:25", "9:35", "11:30"
 ];
 
+// ======================================================================
 var weeks = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
 
 var isClock7 = true;
@@ -50,6 +51,7 @@ function clock() {
 setInterval(clock, 1000);
 clock(); // このclockがないとページを更新した時に一瞬時計が映らない。最初から映す為に直接実行（ちなみに順番は関係なし）
 
+// ======================================================================
 function trash() {
     var now = new Date();
     var contents = ["もえるゴミ", "プラスチック", "もえないゴミ", "なし"];
@@ -74,6 +76,7 @@ function trash() {
 
 trash();
 
+// ======================================================================
 function timeStringToNumber(a) {
     var array = [];
     var str = a.split(":");
@@ -115,6 +118,7 @@ function getNextTrainTime(a, getCurrentTime) {
     }
 }
 
+// ======================================================================
 // 時刻表の平日・土日の切り替え
 var now = new Date;
 var w = now.getDay();
@@ -180,6 +184,7 @@ for (var j = 0; j < holiday2.length; j++) {
     }
 }
 
+// ======================================================================
 var weatherApiUrl = "http://weather.livedoor.com/forecast/webservice/json/v1";
 
 function makeWeatherRequest(urlParams, cb) {
@@ -205,6 +210,7 @@ makeWeatherRequest("?city=110010", function (response) {
     document.getElementById("publicTime").innerHTML = "予報発表時間：" + response["publicTime"];
 });
 
+// ======================================================================
 // スライド
 var time = 3500;
 
