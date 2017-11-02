@@ -323,7 +323,33 @@ function createList4() {
 }
 
 // ==============================================================================
-var data = [];
+function _classCallCheck(instance, Constructor) {
+    if(!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+
+var data = {
+    foodsDataList: []
+};
+data.createFoodData = function (array) {
+    var FoodData = function FoodData(name, kcal, protein, carbo, lipid, ca, fe, retinol, vB1, vB2, vC) {
+    _classCallCheck(this, FoodData);
+
+    this.name = name;
+    this.kcal = kcal;
+    this.protein = protein;
+    this.carbo = carbo;
+    this.lipid = lipid;
+    this.ca = ca;
+    this.fe = fe;
+    this.retinol = retinol;
+    this.vB1 = vB1;
+    this.vB2 = vB2;
+    this.vC = vC;
+    };
+    return new (Function.prototype.)
+};
 
 function searchName() {
     var rep = ["エネルギー(kcal)", "たんぱく質(g)", "炭水化物(g)", "脂質(g)", "カルシウム(mg)", "鉄(mg)", "レチノール活性当量(ビタミンA)(µg)", "ビタミンB1(mg)", "ビタミンB2(mg)", "ビタミンC(mg)"];
@@ -339,7 +365,6 @@ function searchName() {
         xhr.onload = function() {
             var response = JSON.parse(this.responseText);
             var data2 = JSON.stringify(response, rep);
-            console.log(data2);
             data.push(data2);
         };
 
@@ -350,7 +375,7 @@ function searchName() {
     }
     sum();
 }
-
+/*
 var kcal = 0;
 var protein = 0;
 var carbo = 0;
@@ -361,6 +386,7 @@ var retinol = 0;
 var vB1 = 0;
 var vB2 = 0;
 var vC = 0;
+
 
 function sum() {
 
